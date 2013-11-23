@@ -162,6 +162,7 @@
         CCSprite *sprSel = [CCSprite spriteWithSpriteFrameName:name];
         sprSel.color = ccc3(150, 150, 150);
         CCMenuItem *item = [CCMenuItemSprite itemWithNormalSprite:sprNorm selectedSprite:sprSel target:(sel)?self:nil selector:sel];
+        item.tag = tag;
         return item;
     } else {
         CCMenuItem *item = [CCMenuItemToggle itemWithTarget:self
@@ -170,6 +171,7 @@
                             [self menuItemNamed:name callback:nil tag:-1],
                             [self menuItemNamed:sName callback:nil tag:-1],
                             nil];
+        item.tag = tag;
         return item;
     }
 }
